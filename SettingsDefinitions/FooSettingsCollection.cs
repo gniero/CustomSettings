@@ -7,9 +7,16 @@ using System.Threading.Tasks;
 
 namespace SettingsTest
 {
-    [Serializable]
-    [SettingsSerializeAs(SettingsSerializeAs.Xml)]
-    public class FooSettingsCollection : SortedSet<FooSettings>
+    public class FooSettingsCollection : ConfigurationElementCollection
     {
+        protected override ConfigurationElement CreateNewElement()
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override object GetElementKey(ConfigurationElement element)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
